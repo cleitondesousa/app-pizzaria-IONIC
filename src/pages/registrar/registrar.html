@@ -1,0 +1,35 @@
+<ion-header>
+
+  <ion-navbar color='verdeClaro'>
+    <ion-title>Registre-se</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <form padding [formGroup]="registerForm" (submit)="registrar()" novalidate>
+    <ion-list>
+      <ion-item>
+        <ion-label floating>
+          <ion-icon ios="ios-person" md="md-person"></ion-icon> Email
+        </ion-label>
+        <ion-input type="text" [(ngModel)]="email" clearInput clearOnEdit="false" formControlName="email" #usuario></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon ios="ios-lock" md="md-lock"></ion-icon> Senha
+        </ion-label>
+        <ion-input type="password" [(ngModel)]="password" formControlName="password" clearInput clearOnEdit="true"
+          #senha></ion-input>
+      </ion-item>
+      <br />
+      <button ion-button block color="verdeClaro" class="login-button" [disabled]="registerForm.invalid">Cadastrar</button>
+
+    </ion-list>
+
+  </form>
+  <p (click)='goToRecuperarSenha()'>ESQUECI MINHA SENHA</p>
+
+</ion-content>

@@ -1,0 +1,29 @@
+page-carrinho {
+    ion-grid {
+        padding: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    ion-card-content{
+        padding: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    ion-card{
+        padding: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    
+    ion-col{
+        padding-bottom: 0 !important;
+    }
+    img{
+        width: 100%;
+        height: 80%;
+    }
+    .icone{
+        background-color: transparent !important;
+    }
+
+    .fonte10 {
+        font-size: 10pt;
+    }
+}

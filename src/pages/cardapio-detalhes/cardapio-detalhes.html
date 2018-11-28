@@ -1,0 +1,55 @@
+<ion-header>
+
+  <ion-navbar color='primary'>
+    <ion-title></ion-title>
+    <ion-buttons  end>
+      <button ios-button icon-only (click)="goToCarrinho()" class="transp" ><ion-icon class="icone" ios="ios-cart" md="md-cart"></ion-icon></button>
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+
+  <ion-content class="card-background-page">
+    <ion-card>
+      <img [src]="pizza.url"/>
+      <div class="card-title">{{pizza.nome}}</div>
+      <div class="card-subtitle">{{pizza.ingredientes}}</div>
+    </ion-card>
+  
+     
+    <ion-card>
+        <ion-item>
+            <ion-label>Tamanho</ion-label>
+            <ion-select [(ngModel)]="TAM" (ionChange)="onTamSelected()">
+              <ion-option value="0">Pequena</ion-option>
+              <ion-option value="1">Média</ion-option>
+              <ion-option value="2">Grande</ion-option>
+            </ion-select>
+          </ion-item>
+      <ion-card-header>
+        Adicionais
+      </ion-card-header>
+    
+      <ion-list *ngFor="let item of arrayAdicionais;">
+        <ion-item >
+          <ion-label>{{item.nome}} - R$ {{item.valor}}</ion-label>
+          <ion-checkbox color="dark" [(ngModel)]='item.ischecked' (ionChange)="onAdicionaisSelected(item)"></ion-checkbox>
+        </ion-item>
+    
+      </ion-list>
+    </ion-card>
+    <ion-card>
+      
+    <ion-card-header>
+      Total Pedido
+    </ion-card-header>
+    <ion-item>
+      <p id='lblTotal'>R$ {{this.ValorTotal}}</p>
+    </ion-item>
+    
+  </ion-card>
+  <button ion-button block color="primary" (click)="adicionarCarrinho()">Adicionar Carrinho</button>
+  </ion-content>
